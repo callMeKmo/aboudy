@@ -1,0 +1,21 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <div style="grid-column: 2/3;grid-row: 2/-1;">
+        <h2 id="manageUsers" class="admin-head"></h2>
+        <% if (users.length != 0) { %>
+            <div class="admin-block">
+                <div class="admin-content users">
+                    <% users.forEach(user => { %>
+                        <form class="admin-item" action="/a/manageUsers/<%= user.id %>/?_method=DELETE" method="post">
+                            <input type="text" name="userId" style="display: none;" value="<%= user.id %>">
+                            <h2 style="float: left;width: 100%;grid-column: 1/2;grid-row: 1/2;"><%= user.email %></h2>
+                            <a style="grid-column: 2/3;grid-row: 1/2;" href="/u/message?userId=<%= user.id %> "><img src="/images/icons/message.svg" width="50" height="50" alt=""></a>
+                            <button style="background-color: #f8f9fa;border-width: 0px;grid-column: 3/-1;grid-row: 1/2;cursor: pointer;" type="submit"><img src="/images/icons/delete.svg" width="50" height="50" alt=""></button>
+                        </form>
+                    <% }) %>
+                </div>
+            </div>
+        <% } else { %>
+            <h2 class="msg-3402 show-message"></h2>
+        <% } %>
+    </div>
+</div>

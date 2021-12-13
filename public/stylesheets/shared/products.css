@@ -1,0 +1,94 @@
+.new-product-form{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    grid-template-columns: auto;
+    place-items: start center;
+    grid-auto-flow: row;
+    width: 100%;
+}
+.upload-form{
+    width: 300px;
+    height: 300px;
+    display: grid;
+    place-items: center;
+}
+.new-product-form select{
+    outline-width: 0px;
+    border-width: 0px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+}
+.new-product-form button{
+    outline-width: 0px;
+    border-width: 0px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    color: #f8f9fa;
+    background-color: #39b549;
+    place-self: center start;
+}
+.new-product-form textarea{
+    resize: none;
+    width: 300px;
+}
+.new-product-form label{
+    width: 300px;
+    display: grid;
+    grid-auto-flow: column;
+}
+.product-form{
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    grid-auto-flow: row;
+    grid-template-rows: 150px 200px 100px;
+}
+.product-form div{
+    display: grid;
+    grid-auto-flow: column;
+    height: 150px;
+    grid-template-columns: min-content;
+}
+.product-form div .firstdiv{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: max-content;
+    grid-template-rows: max-content;
+    place-items: center start;
+    padding: 15px;
+}
+.product-form div .firstdiv .seconddiv{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content;
+    grid-template-rows: min-content;
+    height: 30px;
+}
+.product-form form{
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center start;
+    grid-template-columns: 100px 100px auto;
+}
+.product-form form button{
+    outline-width: 0px;
+    border-width: 0px;
+    border-radius: 15px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    background-color: #c1c1c1;
+    color: #212529;
+}
+.product-form form input{
+    background-color: #f8f9fa;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px;
+    outline-width: 0px;
+    width: 60px;
+    height: 40px;
+    margin: 0 20px;
+}

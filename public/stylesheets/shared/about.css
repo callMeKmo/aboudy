@@ -1,0 +1,11 @@
+.aboutMedia{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+}
+#aboutPage{
+    text-align: center;
+}
+#aboutPage div{
+    margin-top: 40px;
+}

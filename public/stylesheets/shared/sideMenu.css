@@ -1,0 +1,70 @@
+.userMenu, .loginMenu{
+    z-index: 1000;
+    grid-row: 2/-1;
+    grid-column: 2/-1;
+    display: none;
+    place-items: start;
+}
+.screen{
+    z-index: 1000;
+    grid-row: 2/-1;
+    grid-column: 1/2;
+    background-color: rgba(000, 000, 000, 0.5);
+    opacity: 0;
+    transition: 0.4s;
+    display: none;
+}
+.shadeScreen{
+    opacity: 0;
+}
+.shadeScreenFade{
+    opacity: 1;
+}
+.menu-form{
+    display: grid;
+    height: 100%;
+    width: 0px;
+    background-color: #f8f9fa;
+    place-items: start center;
+}
+.menu-form img{
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+}
+.menu-form button{
+    outline-width: 0px;
+    cursor: pointer;
+    border-width: 0px;
+    background-color: #212529;
+    color: #f8f9fa;
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+.menu-form select{
+    outline-width: 0px;
+    cursor: pointer;
+    border-width: 0px;
+    background-color: #212529;
+    color: #f8f9fa;
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+.menu-form option{
+    outline-width: 0px;
+    cursor: pointer;
+    border-width: 0px;
+    background-color: #212529;
+    color: #f8f9fa;
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    margin-top: 40px;
+    font-size: 14px;
+}

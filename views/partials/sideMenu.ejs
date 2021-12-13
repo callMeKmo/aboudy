@@ -1,0 +1,41 @@
+<div class="screen shadeScreen off"></div>
+<% if (locals.isAdmin != null) { %>
+    <div class="userMenu off">
+        <div class="menu-form">
+            <div class="inner-menu" style="display: none">
+                <img src="/images/icons/user.svg" alt="">
+                <h2><%= locals.user %></h2>
+                <% if (locals.isAdmin === 'true') { %>
+                    <h4 id="admin"></h4>
+                <% } %>
+                <a href="/u/inbox"><button id="menuInbox"></button></a>
+                <% if (locals.isAdmin === 'true') { %>
+                    <a href="/a/adminPanel"><button id="adminPanel"></button></a>
+                <% } else { %>
+                    <a href="/u/cart"><button id="menuCart"></button></a>
+                <% } %>
+                <a href="/o/logout"><button id="menuLogoutBtn"></button></a>
+                <select id="selectbtn">
+                    <option value="" disabled selected id="select"></option>
+                    <option value="" id="arabic"></option>
+                    <option value="" id="english"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+    <div class="loginMenu off">
+        <div class="menu-form">
+            <div class="inner-menu" style="display: none;place-items: center;">
+                <img src="/images/icons/user.svg" alt="">
+                <a href="/o/login"><button id="menuLoginBtn"></button></a>
+                <a href="/o/signup"><button id="menuSignupBtn"></button></a>
+                <select id="selectbtn">
+                    <option value="" disabled selected id="select"></option>
+                    <option value="ar" id="arabic"></option>
+                    <option value="en" id="english"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+<% } %>

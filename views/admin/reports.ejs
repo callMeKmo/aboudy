@@ -1,0 +1,52 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <div style="grid-row: 2/-1;grid-column: 2/3;">
+        <div class="admin-head report-head">
+            <h2 id="userReports">1</h2>
+            <h2 id="productsReports">2</h2>
+            <h2 id="adminReports">3</h2>
+        </div>
+        <div class="admin-block">
+            <div class="admin-content reports">
+                <% if (authReports.length != 0) { %>
+                    <% authReports.forEach(report => { %>
+                        <div class="admin-item auth-report"><a href="./<%= report.id %>/show">
+                            <h2><%= report.title %> </h2>
+                            <h2><%= report.reportedBy %> </h2>
+                            <% var rawDate = report.reportedAt.toString() %>
+                            <% var date = `${rawDate.split(' ')[2]} ${rawDate.split(' ')[1]} ${rawDate.split(' ')[3]} ${rawDate.split(' ')[4]}` %>
+                            <h2><%= date %></h2></a>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <h2 class="msg-3001 auth-report show-message"></h2>
+                <% } %>
+                <% if (productReports.length != 0) { %>
+                    <% productReports.forEach(report => { %>
+                        <div class="admin-item product-report"><a href="./<%= report.id %>/show">
+                            <h2><%= report.title %>: </h2>
+                            <h2><%= report.reportedBy %></h2>
+                            <% var rawDate = report.reportedAt.toString() %>
+                            <% var date = `${rawDate.split(' ')[2]} ${rawDate.split(' ')[1]} ${rawDate.split(' ')[3]} ${rawDate.split(' ')[4]}` %>
+                            <h2><%= date %></h2></a>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <h2 class="msg-3001 product-report show-message"></h2>
+                <% } %>
+                <% if (adminReports.length != 0) { %>
+                    <% adminReports.forEach(report => { %>
+                        <div class="admin-item admin-report"><a href="./<%= report.id %>/show">
+                            <h2><%= report.title %> </h2>
+                            <h2><%= report.reportedBy %> </h2>
+                            <% var rawDate = report.reportedAt.toString() %>
+                            <% var date = `${rawDate.split(' ')[2]} ${rawDate.split(' ')[1]} ${rawDate.split(' ')[3]} ${rawDate.split(' ')[4]}` %>
+                            <h2><%= date %></h2></a>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <h2 class="msg-3001 admin-report show-message"></h2>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

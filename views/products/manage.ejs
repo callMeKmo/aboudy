@@ -1,0 +1,37 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <form action="./update" method="post" class="new-product-form" style="grid-row: 2/-1;">
+        <label>
+            <input type="file" name="images" class="filepond upload-form">
+        </label>
+            <label>
+                Title: <input class="" type="text" name="title">
+            </label>
+            <label>
+                International ID: <input class="" type="text" name="inId">
+            </label>
+            <label>
+                National ID: <input class="" type="text" name="nId">
+            </label>
+            <h2>Description: </h2><textarea name="description" class=""></textarea>
+            <div>
+                <select name="category" id="">
+                    <option value="" selected disabled id="selectCategory"></option>
+                    <% categories.forEach(category => { %>
+                        <option value="<%= category.id %>"><%= category.title %> </option>
+                    <% }) %>
+                </select>
+                <select name="brand" id="">
+                    <option value="" selected disabled id="selectBrand"></option>
+                    <% brands.forEach(brand => { %>
+                        <option value="<%= brand.id %>"><%= brand.title %> </option>
+                    <% }) %>
+                </select>
+            </div>
+            <div style="width: 300px;display: grid;place-items: center start;grid-auto-flow: column;">    
+                <button type="submit" id="productUpdate"></button>
+                <button type="button" style="background-color: #dd0000; place-self: center end;" id="productRemove" onclick="{document.forms['removeForm'].submit()}"></button>
+            </div>
+    </form>
+</div>
+<form class="remove-form" name="removeForm" action="./delete?_method=DELETE" method="POST">
+</form>

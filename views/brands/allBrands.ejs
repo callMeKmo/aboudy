@@ -1,0 +1,19 @@
+<% if (brands.length == 0) { %>
+    <h2 class="msg-3300 show-message"></h2>
+<% } else {%>
+    <div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+        <h2 id="allBrands" style="margin-top: 15px;margin-bottom: 15px;height: 30px;grid-column: 2/3;"></h2>
+        <div class="items">
+            <% brands.forEach(brand => { %>
+                <a href="/b/<%= brand.brand.id %>/show"><div class="item">
+                    <% if(brand.image != undefined) { %> 
+                        <img src="<%= brand.image.imagePath %>" alt="" width="150" height="150">
+                    <% } else { %>
+                        <img src="/images/icons/loadingFaild.png" alt="" width="150" height="150">
+                        <% } %> 
+                        <h2 style="font-size: 18px; grid-column: 1/-1;"><%= brand.brand.title %></h2>
+                </div></a>
+            <% }) %>
+        </div>
+    </div>
+<% } %>

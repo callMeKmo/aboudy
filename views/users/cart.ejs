@@ -1,0 +1,23 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <% if (products.length == 0) { %>
+        <h2 class="msg-3400 show-message"></h2>
+    <% } else { %>
+        <div class="cart-form" style="grid-row: 2/-1;margin-top: 30px;">
+            <% var total = 0 %> 
+            <% products.forEach(product => { %> 
+                <form class="cart-item" action="/u/cart/<%= product.id %>?_method=DELETE" method="post">
+                    <h2><%= product.title %></h2>
+                    <h2>(<%= product.count %>)</h2>
+                    <% total = total + product.count %>
+                    <button type="submit"><img src="/images/icons/delete.svg" width="50" height="50" alt=""></button>
+                </form>
+            <% }) %>
+            <form class="cart-footer" action="./<%= id %>/order" method="POST">
+                <h2 id="userTotal">: <%= count %></h2>
+                <h2>items: (<%= total %>)</h2>
+                <a href="" id="orderWhatsapp"><img src="/images/icons/whatsapp.png" width="40" height="40" alt=""></a>
+                <button type="submit" id="orderNow"></button>
+            </form>
+        </div>
+    <% } %>
+</div>

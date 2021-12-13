@@ -1,0 +1,109 @@
+.adminPanel{
+    grid-column: 2/3;
+    grid-row: 3/-1;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 200px 200px 200px 1fr;
+    grid-template-rows: 250px 250px;
+}
+.reports{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    cursor: pointer;
+}
+.manageUsers{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    cursor: pointer;
+}
+.orders{
+    grid-column: 4/5;
+    grid-row: 1/2;
+    cursor: pointer;
+}
+.addProduct{
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    cursor: pointer;
+}
+.category{
+    grid-column: 3/4;
+    grid-row: 2/-1;
+    cursor: pointer;
+}
+.brand{
+    grid-column: 4/5;
+    grid-row: 2/-1;
+    cursor: pointer;
+}
+.adminPanel .img{
+    background-color: #a1a1a1;
+    width: 160px;
+    height: 160px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
+.admin-block{
+    grid-column: 2/3;
+    grid-row: 3/-1;
+    display: grid;
+    place-items: start center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-color: #c1c1c1;
+}
+.admin-head{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.admin-content{
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+    width: 100%;
+    display: grid;
+    background-color: #c1c1c1;
+    grid-template-columns: 2px 1fr 2px;
+}
+.admin-item{
+    grid-column: 2/3;
+    width: 100%;
+    place-items: center start;
+    background-color: #f8f9fa;
+    margin: 2px 0px;
+    display: grid;
+}
+.users .admin-item{
+    grid-template-columns: 1fr 60px 60px;
+}
+.reports .admin-item a{
+    display: grid;
+    grid-column: 1/-1;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.report-head{
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+}
+.report-head h2{
+    cursor: pointer;
+}
+.reports .admin-item{
+    display: none;
+}
+.orders .admin-item{
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    place-items: center;
+}
+.orders .admin-item a{
+    display: grid;
+    grid-column: 1/-1;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+}

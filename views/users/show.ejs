@@ -1,0 +1,11 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <div class="message-form" style="grid-row: 2/-1;">
+        <div>
+            <div>
+                <h2 id="from"><%= showMessage.sender %></h2>
+                <div><%= showMessage.content %></div>
+                <a href="../message?userId=<%= showMessage.senderId %> " id="userReply"></a>
+            </div>
+        </div>
+    </div>
+</div>

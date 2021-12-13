@@ -1,0 +1,30 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <div class="product-form" style="grid-row: 2/-1; margin-top: 30px;">
+        <div>
+            <% if (images.length != 0) { %>
+                <% images.forEach(image => { %>
+                    <img src="<%= image.imagePath %>" width="150" height="150" alt="/images/icons/loadingFaild.png">
+                <% }) %>
+            <% } else { %>
+                <img src="/images/icons/loadingFaild.png" width="150" height="150" alt="/images/icons/loadingFaild.png">
+            <% } %>
+            <div class="firstdiv">
+                <h2><%= product.title %></h2>
+                <h2><%= product.nId %> </h2>
+                <h2><%= product.inId %> </h2>
+                <div class="seconddiv">
+                    <a href="/b/<%= brand.id %>/show" style="margin-right: 10px; padding: 0;"><%= brand.title %></a>
+                    <a href="/c/<%= category.id %>/show" style="padding: 0;"><%= category.title %></a>
+                </div>
+            </div>
+        </div>
+        <div style="grid-auto-flow: column;width: 100%;display: grid;grid-template-columns: max-content;"><%= product.description %></div>
+        <form method="POST" action="./order">
+            <button type="submit" id="addToCart"></button>
+            <input type="number" placeholder="000" name="amount" value="1">
+            <% if (locals.isAdmin === 'true') { %>
+                <a style="color: #29abe2;" href="./manage" id="productManage"></a>
+            <% } %>
+        </form>
+    </div>
+</div>

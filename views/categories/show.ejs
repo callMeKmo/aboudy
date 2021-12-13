@@ -1,0 +1,39 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <div class="category-form" style="margin-top: 30px;grid-row: 2/-1;">
+        <div class="zerodiv">
+            <% if (images.length != 0) { %>
+                <% images.forEach(image => { %>
+                    <img src="<%= image.imagePath %>" width="150" height="150" alt="/images/icons/loadingFaild.png">
+                <% }) %>
+            <% } else { %>
+                <img src="/images/icons/loadingFaild.png" width="150" height="150" alt="/images/icons/loadingFaild.png">
+            <% } %>
+            <div class="firstdiv">
+                <h2><%= category.title %></h2>
+                <div style="grid-auto-flow: column;width: 100%;display: grid;grid-template-columns: max-content;"><%= category.description %></div>
+                <% if (locals.isAdmin === 'true') { %>
+                    <a style="color: #29abe2;" href="./manage" id="categoryManage"></a>
+                <% } %>
+            </div>
+        </div>
+        <div class="categoryProducts" style="margin-top: 50px;">
+            <% if (products.length != 0) { %>
+                <% products.forEach(product => { %>
+                    <% if(product[1] != undefined && product[1] != null) { %>
+                        <a href="/p/<%= product[0].id %>/show"><div class="item"> 
+                            <img src="<%= product[1].imagePath %>" alt="" width="150" height="150">
+                            <h2 style="font-size: 18px; text-align: center;grid-column: 1/-1;"><%= product[0].title %></h2>
+                        </div></a>
+                    <% } else { %>
+                        <a href="/p/<%= product[0].id %>/show"><div class="product"> 
+                            <img src="/images/icons/loadingFaild.png" alt="" width="150" height="150">
+                            <h2 style="font-size: 18px; text-align: center;grid-column: 1/-1;"><%= product[0].title %></h2>
+                        </div></a>
+                    <% } %>
+                <% }) %>
+            <% } else { %>
+                <h2 class="show-message msg-3201">this category have no products!</h2>
+            <% } %>
+        </div>
+    </div>
+</div>

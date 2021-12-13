@@ -1,0 +1,16 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <% if (messages.length == 0) { %>
+        <h2 class="msg-3401 show-message"></h2>
+    <% } else { %>
+        <div class="inbox-form" style="grid-row: 2/-1;margin-top: 30px;">
+                <% messages.forEach(message => { %>
+                    <a href="./<%= message.id %>/show"><div class="inbox-item">
+                        <h2><%= message.sender %></h2>
+                        <% var rawDate = message.createdAt.toString() %>
+                        <% var date = `${rawDate.split(' ')[2]} ${rawDate.split(' ')[1]} ${rawDate.split(' ')[3]} ${rawDate.split(' ')[4]}` %>
+                        <h2 id="date"><%= date %></h2>
+                    </div></a>
+                <% }) %>
+        </div>
+    <% } %>
+</div>

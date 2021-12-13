@@ -1,0 +1,23 @@
+<div style="display: grid;grid-column: 1/2;grid-row: 2/-1;grid-template-columns: 15px 1fr 15px;width: 100%;grid-template-rows: min-content 1fr;">
+    <div style="grid-row: 2/-1;grid-column: 2/3;">
+        <h2 id="orders" class="admin-head"></h2>
+        <% if (orders.length != 0) { %>
+            <div class="admin-block">
+                <div class="admin-content orders">
+                    <% orders.forEach(order => { %>
+                            <div class="admin-item">
+                                <a style="grid-row: 1/-1;grid-column: 1/2;float: left;" href="/a/<%= order.id %>/show"><h2><%= order.title %> </h2>
+                                <% var rawDate = order.reportedAt.toString() %>
+                                <% var date = `${rawDate.split(' ')[2]} ${rawDate.split(' ')[1]} ${rawDate.split(' ')[3]} ${rawDate.split(' ')[4]}` %>
+                                <h2 style="grid-column: 2/3;grid-row: 1/-1;"><%= date %></h2>
+                                </a>
+                                <a href="/u/message?userId=<%= order.reportedBy %>" style="cursor: pointer;float: right;grid-column: 2/-1;grid-row: 1/-1;" type="submit"><img src="/images/icons/message.svg" width="50" height="50" alt=""></a>
+                            </div>
+                    <% }) %>
+                </div>
+            </div>
+        <% } else { %>
+            <h2 class="msg-3000 show-message"></h2>
+        <% } %>
+    </div>
+</div>

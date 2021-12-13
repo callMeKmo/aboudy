@@ -1,0 +1,16 @@
+<div class="header">
+    <a class="logoLink" href="/"><img class="logo" src="/images/favicon.ico" alt="" width="auto" height="60"></a>
+    <form method="GET" class="search-form">
+        <input id="searchBar" type="search" placeholder="" name="title">
+        <button type="submit" class="searchBtn"><img src="/images/icons/search.svg" width="15px" alt=""></button>
+    </form>
+    <a id="categories" href="/c/all"></a>
+    <a id="brands" href="/b/all"></a>
+    <a id="aboutUs" href="/about"></a>
+    <% if (locals.user != null) { %>
+        <button class="menu-btn" onclick="userMenu()"><img src="/images/icons/user.svg" width="15px" alt=""></button>
+    <% } else { %>
+    <button class="menu-btn" onclick="loginMenu()"><img src="/images/icons/user.svg" width="15px" alt=""></button>
+    <% } %>
+    <div style="background-color: #d3d3d3; height: 2px;width: 100%;grid-column: 1/-1;"></div>
+</div>

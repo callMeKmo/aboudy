@@ -1,0 +1,28 @@
+.footer{
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2px 60px;
+    background-color: #f0f0f0;
+    grid-row: 3/-1;
+    grid-column: 1/-1;
+    z-index: 10;
+    place-items: center;
+}
+.footer h2{
+    text-decoration: none;
+    cursor: pointer;
+    color: #a1a1a1;
+    font-size: 12px;
+    text-align: center;
+    line-break: loose;
+}
+.footer h3{
+    text-decoration: none;
+    cursor: pointer;
+    color: #212529;
+    font-size: 12px;
+    text-align: center;
+    line-break: loose;
+}

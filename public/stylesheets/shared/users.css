@@ -1,0 +1,121 @@
+.inbox-form{
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    width: 100%;
+    height: 100%;
+    background-color: #a1a1a1;
+}
+.inbox-item{
+    margin: 3px;
+    background-color: #f8f9fa;
+    height: 70px;
+    place-items: center start;
+    display: grid;
+    grid-auto-flow: column;
+}
+.inbox-item #date{
+    place-self: center end;
+}
+.message-form{
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.message-form div{
+    background-color: #c1c1c1;
+}
+.message-form div div{
+    background-color: #f8f9fa;
+    margin: 2px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 60px 120px 60px;
+    padding: 0px 20px;
+}
+.message-form div div h2{
+    place-self: center start;
+}
+.message-form div div textarea{
+    place-self: start;
+    resize: none;
+    width: 360px;
+    height: 120px;
+}
+.message-form div div div{
+    place-self: start;
+    resize: none;
+    width: 360px;
+    height: 120px;
+}
+.message-form div div a{
+    place-self: center end;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    outline-width: 0px;
+    border-width: 0px;
+    color: #39b54a;
+}
+.message-form div div button{
+    place-self: center end;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    outline-width: 0px;
+    border-width: 0px;
+    color: #39b54a;
+}
+.cart-form{
+    grid-column: 2/3;
+    grid-row: 2/-1;
+    width: 100%;
+    height: fit-content;
+    background-color: #a1a1a1;
+}
+.cart-item{
+    margin: 3px;
+    background-color: #f8f9fa;
+    height: 70px;
+    place-items: center start;
+    display: grid;
+    grid-auto-flow: column;
+}
+.cart-item button{
+    place-self: center end;
+    padding: 0 15px;
+    background-color: #f8f9fa;
+    outline-width: 0px;
+    border-width: 0px;
+    height: 60px;
+    cursor: pointer;
+}
+.cart-footer{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column: 1/-1;
+    grid-row: auto/-1;
+    height: 70px;
+    place-items: center start;
+    background-color: #f8f9fa;
+}
+.cart-footer button{
+    place-self: center end;
+    padding: 0 15px;
+    width: 120px;
+    height: 40px;
+    outline-width: 0px;
+    border-radius: 8px;
+    border-width: 0px;
+    color: #f8f9fa;
+    background-color: #39b54a;
+    font-size: 16px;
+}
+.cart-footer a{
+    place-self: center;
+    height: 40px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+}
